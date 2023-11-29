@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #6d4d64;
+  font-size: 16px;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+html,
+body,
+#root,
+#root > div {
+  height: 100%;
+}
+
+/* ===== Scrollbar CSS ===== */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #cecbcb #f8f9fa;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #cecbcb;
+  border-radius: 10px;
+}
+
+/* Firefox */
+*::-moz-scrollbar {
+  width: 8px;
+}
+
+*::-moz-scrollbar-track {
+  background: transparent;
+}
+
+*::-moz-scrollbar-thumb {
+  background-color: #cecbcb;
+  border-radius: 10px;
+}
+
+.p-treetable tr {
+  border-bottom: 2px solid #faf7f4;
+}
+
+.p-treetable tr:last-child {
+  border-bottom: none !important;
+}
+
+.p-treetable tr td {
+  word-wrap: break-word;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: right;
+}
+
+.p-treetable tr td:first-child {
+  text-align: left !important;
+  display: flex;
+  align-items: center;
+}
+
+.p-treetable tr td:last-child {
+  border-right: none !important;
+  padding: 0px !important;
+}
+
+.p-treetable .p-treetable-thead tr th {
+  background-color: white;
+  border-bottom: 2px solid #faf7f4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: right;
+}
+
+.p-treetable .p-treetable-thead tr th:first-child {
+  text-align: left !important;
+  padding-left: 47px;
+}
+
+.p-treetable .p-treetable-thead tr th span {
+  font-size: 12px !important;
+  font-weight: 500;
+  color: #687182;
+}
+
+.p-treetable .p-inputtext {
+  height: 35px;
+}
+
+.p-treetable .p-inputtext:focus {
+  border: 1px solid #8e7b89;
+  box-shadow: none;
+}
+
+ol {
+  line-height: 0px;
+}
+
+li {
+  line-height: 12px;
+}

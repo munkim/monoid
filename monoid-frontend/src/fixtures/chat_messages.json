@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "messages": [
+      {
+        "id": 1,
+        "content": "Best programming language",
+        "type": "user"
+      },
+      {
+        "id": 2,
+        "content": "It's difficult to say without clarifying your definition of 'best'. Please define your criteria in descending order. Complete the listing by typing 'done'",
+        "type": "bot"
+      },
+      {
+        "id": 3,
+        "content": "English-like syntax",
+        "type": "user"
+      },
+      {
+        "id": 4,
+        "content": "Correctness guarantee",
+        "type": "user"
+      },
+      {
+        "id": 5,
+        "content": "Real-life performance",
+        "type": "user"
+      },
+      {
+        "id": 6,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 7,
+        "content": "Here's the top 3 programming languages based on your criteria:\n1. Rust\n2. Haskell\n3. C++",
+        "type": "bot"
+      },
+      {
+        "id": 8,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 9,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 10,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 11,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 12,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 13,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 14,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 15,
+        "content": "done",
+        "type": "user"
+      },
+      {
+        "id": 16,
+        "content": "done",
+        "type": "user"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "messages": [
+      {
+        "id": 1,
+        "content": "Weather tomorrow",
+        "type": "user"
+      },
+      {
+        "id": 2,
+        "content": "Please specify the location",
+        "type": "bot"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "messages": [
+      {
+        "id": 1,
+        "content": "SQL vs NoSQL",
+        "type": "user"
+      },
+      {
+        "id": 2,
+        "content": "What is your use case?",
+        "type": "bot"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "messages": [
+      {
+        "id": 1,
+        "content": "Why do cats meow?",
+        "type": "user"
+      },
+      {
+        "id": 2,
+        "content": "Cats meow to people for similar reasons. They meow to people for food, to get up on the bed, and to come out and play. Mostly they meow to humans for food.",
+        "type": "bot"
+      }
+    ]
+  }
+]
