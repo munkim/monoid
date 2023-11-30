@@ -15,7 +15,7 @@ from monoid_backend.crud.auth_crud import AuthCRUD, get_auth_crud
 from monoid_backend.crud.account_crud import AccountCRUD, get_account_crud
 from monoid_backend.config import settings
 from cassandra.cluster import Session as CassandraSession
-from monoid_backend.core.aws_keyspaces import get_cassandra_session
+from monoid_backend.core.cassandra import get_cassandra_session
 
 router = APIRouter()
 

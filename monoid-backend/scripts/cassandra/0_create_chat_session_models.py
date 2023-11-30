@@ -9,16 +9,19 @@ from ssl import SSLContext, PROTOCOL_TLSv1_2 , CERT_REQUIRED
 from cassandra_sigv4.auth import SigV4AuthProvider
 from cassandra import ConsistencyLevel
 
-from monoid_backend.core.aws_keyspaces import get_cluster
+from monoid_backend.config import settings
+from monoid_backend.core.cassandra import get_cassandra_cluster
 
-cluster = get_cluster()
-session = cluster.connect()
-
+if settings.CASSANDRA_HOST != "" and settings.CASSANDRA_PORT != "":
+    cluster = get_cassandra_cluster(settings.CASSANDRA_HOST, settings.CASSANDRA_PORT)
+    session = cluster.connect()
+else:
+    raise Exception('CASSANDRA_HOST and CASSANDRA_PORT must be set in .env')
 
 print('Creating a keyspace...')
 session.execute(
     "CREATE KEYSPACE IF NOT EXISTS monoid WITH REPLICATION = { \
-        'class' : 'SingleRegionStrategy' \
+        'class' : 'SimpleStrategy' \
     };"
 )
 print('Successfully created a keyspace!')

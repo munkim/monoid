@@ -34,6 +34,10 @@ class Settings(BaseSettings):
     DB_NAME: str = os.environ.get("DB_NAME") if MONOID_ENVIRONMENT != "local" else "postgres"
     ssl_require: bool = True if MONOID_ENVIRONMENT != "local" else False
 
+    # Cassandra
+    CASSANDRA_HOST: str = os.environ.get("CASSANDRA_HOST", "")
+    CASSANDRA_PORT: str = os.environ.get("CASSANDRA_PORT", "")
+
     # Optional: Needed for scheduling a message to an Agent via AWS EventBridge. This feature is outdated.
     AWS_ACCOUNT_ID: str = os.environ.get("AWS_ACCOUNT_ID", "")
 

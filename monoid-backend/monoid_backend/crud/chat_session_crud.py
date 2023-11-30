@@ -4,7 +4,7 @@ from fastapi import Depends
 from datetime import datetime
 from cassandra.cluster import Session as AsyncSession, ResultSet
 from monoid_backend.api.v1.api_models.chat_session import ChatSessionCreateRequest, ChatSessionHeader, ChatSessionMessageRequest
-from monoid_backend.core.aws_keyspaces import get_cassandra_session
+from monoid_backend.core.cassandra import get_cassandra_session
 from monoid_backend.db_models.chat_session import ChatSession, ChatMessage
 
 
