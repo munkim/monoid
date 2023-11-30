@@ -36,7 +36,7 @@
 poetry run uvicorn monoid_backend.main:app --port 8080 --reload
 ```
 
-## Postgres DB Migrations (using Alembic)
+## 💽 Postgres DB Migrations (using Alembic)
 When creating a new or making changes to an existing RDB model, you would need to migrate your database.
 
 
@@ -60,5 +60,5 @@ When creating a new or making changes to an existing RDB model, you would need t
 
 For more info, please refer to [Alembic's doc](https://alembic.sqlalchemy.org/en/latest/).
 
-## Documentation
+## 🗒️ Documentation
 Coming soon.
