@@ -22,7 +22,7 @@ This platform has several features to make it painless to create AI Agents:
 # 🔗 Important Links
 
 - [Landing Page](monoid.so)
-- [Roadmap]: See the new and exciting features coming soon. 
+- [Roadmap](https://github.com/orgs/monoidspace/projects/2/views/1): See the new and exciting features coming soon. 
 
 # ✍ Contributing
 
