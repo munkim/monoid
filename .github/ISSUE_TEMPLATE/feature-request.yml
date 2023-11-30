@@ -1,9 +1,8 @@
-name: "💡 Feature request"
+name: "0x0001F4A1 Feature request"
 description: Submit a proposal/request for a new feature on Monoid
-labels: ["Feature Request"]
+labels: ["01 Feature Request"]
 body:
   - type: textarea
-    id: ❔ context
     validations:
       required: true
     attributes:
@@ -12,7 +11,7 @@ body:
         Please outline the context for your request. If it's related to a problem or an issue on GitHub, please link them here.
 
   - type: textarea
-    id: 🚀 feature-request
+    id: feature-request
     validations:
       required: true
     attributes:
