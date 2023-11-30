@@ -1,0 +1,21 @@
+name: "💡 Feature request"
+description: Submit a proposal/request for a new feature on Monoid
+labels: ["Feature Request"]
+body:
+  - type: textarea
+    id: ❔ context
+    validations:
+      required: true
+    attributes:
+      label: Context
+      description: |
+        Please outline the context for your request. If it's related to a problem or an issue on GitHub, please link them here.
+
+  - type: textarea
+    id: 🚀 feature-request
+    validations:
+      required: true
+    attributes:
+      label: Feature request
+      description: |
+        Please provide a concise description of the feature proposal.
