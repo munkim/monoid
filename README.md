@@ -1,6 +1,8 @@
 ![](https://lh7-us.googleusercontent.com/fGCG5fGVi_ZLjH-BXVq4NB1Rd8VJHpETC2WD2dIKkNPCGKxh7e8iIz9PBDxhX1gT5jJ4zSDNJyMP_0vrAegrLJOjU4aOA5aJbU9ujSlHLSckFvUdkeEiFPFPB61jlaDdvJ6AjqNQzd0thFK_Q1EUyXWfnA=s2048)
 
 **Turn your APIs into AI Agents**
+[![](https://dcbadge.vercel.app/api/server/KxdjPCeswT?compact=true&style=flat)](https://discord.gg/KxdjPCeswT)
+
 
 # 🧐 What is Monoid?
 
@@ -21,7 +23,7 @@ This platform has several features to make it painless to create AI Agents:
 [![Video Title](https://assets-global.website-files.com/654beac0098fd8e25fbdc9a0/6556a4c3366cf1d7dd8d0605_Screenshot%202023-11-16%20at%206.23.50%20PM.png)](https://www.loom.com/share/0dd43d549a2d4287b01bec0d257e6893?sid=4f4d187a-6866-423f-ae9d-e76b63d55b91)
 # 🔗 Important Links
 
-- [Landing Page](monoid.so)
+- [Landing Page](https://monoid.so)
 - [Roadmap](https://github.com/orgs/monoidspace/projects/2/views/1): See the new and exciting features coming soon. 
 
 # ✍ Contributing
