@@ -1,8 +1,7 @@
 ![](https://lh7-us.googleusercontent.com/fGCG5fGVi_ZLjH-BXVq4NB1Rd8VJHpETC2WD2dIKkNPCGKxh7e8iIz9PBDxhX1gT5jJ4zSDNJyMP_0vrAegrLJOjU4aOA5aJbU9ujSlHLSckFvUdkeEiFPFPB61jlaDdvJ6AjqNQzd0thFK_Q1EUyXWfnA=s2048)
 
 **Turn your APIs into AI Agents**
-\
-\
+
 [![](https://dcbadge.vercel.app/api/server/KxdjPCeswT?compact=true&style=flat)](https://discord.gg/KxdjPCeswT)
 
 
@@ -32,12 +31,15 @@ This platform has several features to make it painless to create AI Agents:
 
 Given that we are an open-source project, we actively welcome contributions of all kinds, including features, documentation, and feedback. 
  
-- To run the project locally, you can quickly set up the [backend](example.com) and/or [frontend](example.com). 
-- For more information about how to contribute, see our [guidelines](example.com).
+- To run the project locally, you can quickly set up the [backend](/monoid-backend/) and/or [frontend](/monoid-frontend/). 
 - To submit a feature request or bug report, check out our [Issues](https://github.com/monoidspace/monoid/issues) page.
-- For any other questions, comments, or suggestions, come join us on [Discord](https://discord.gg/tMW4egr5bR)! 
+- Guidelines coming soon!
+<!-- - For more information about how to contribute, see our [guidelines](example.com). -->
 
-[![Join us on Discord](https://invidget.switchblade.xyz/nQXP83SNeC)](https://discord.gg/nQXP83SNeC)
+# Join our community
+For any other questions, comments, or suggestions, come join us on [Discord](https://discord.gg/KxdjPCeswT)! 
+
+[![Join us on Discord](https://invidget.switchblade.xyz/KxdjPCeswT)](https://discord.gg/KxdjPCeswT)
 
 # License
 
