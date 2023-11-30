@@ -3,7 +3,6 @@ description: Submit a proposal/request for a new feature on Monoid
 labels: ["01 Feature Request"]
 body:
   - type: textarea
-    id: context
     validations:
       required: true
     attributes:
