@@ -1,6 +1,8 @@
 ![](https://lh7-us.googleusercontent.com/fGCG5fGVi_ZLjH-BXVq4NB1Rd8VJHpETC2WD2dIKkNPCGKxh7e8iIz9PBDxhX1gT5jJ4zSDNJyMP_0vrAegrLJOjU4aOA5aJbU9ujSlHLSckFvUdkeEiFPFPB61jlaDdvJ6AjqNQzd0thFK_Q1EUyXWfnA=s2048)
 
 **Turn your APIs into AI Agents**
+\
+\
 [![](https://dcbadge.vercel.app/api/server/KxdjPCeswT?compact=true&style=flat)](https://discord.gg/KxdjPCeswT)
 
 
