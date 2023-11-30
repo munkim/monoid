@@ -9,7 +9,8 @@
 - Poetry (Python library)
 
 ### Local Env Setup 
-0. Install local version of Postgres. For simplicity and safety, we recommend using Docker. 
+#### Postgres Setup
+1. Install local version of Postgres. For simplicity and safety, we recommend using Docker. 
 
     If using Docker: 
 
@@ -17,19 +18,36 @@
     docker run --name monoid-postgres -p 5432:5432 -e POSTGRES_PASSWORD=pgpassword -d postgres
     ```
 
+#### Cassandra Setup
 1. Add cassandra related certificates (`global-bundle.pem` and `sf-class2-root.crt`) under `monoid_backend/core/secret/`. Those certificates can be acquired from AWS Keyspaces.
 
     Note: If using other services such as ScyllaDB, DataStax, or even a local instance, you may want to change `get_cluster()` function in [monoid_backend/core/aws_keyspaces.py](monoid_backend/core/aws_keyspaces.py).
 
-2. Copy `.env.example` with a name `.env`.
+
+#### Application Setup
+1. Copy `.env.example` with a name `.env`.
     ```
     cp .env.example .env
     ```
-3. Change all values in `.env`.
-4. Install dependencies using [Poetry](https://python-poetry.org/docs/).
+    
+2. Change all values in `.env`.
+
+3. Install dependencies using [Poetry](https://python-poetry.org/docs/).
     ```
     poetry install
     ```
+
+4. Migrate Postgres
+    ```
+    alembic upgrade head
+    ```
+
+5. Migrate Cassandra
+    ```
+    # Run from monoid/monoid_backend
+    python scripts/cassandra/0_create_chat_session_models.py
+    ```
+
 
 ### Run server
 ```
