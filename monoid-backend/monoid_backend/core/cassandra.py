@@ -1,10 +1,12 @@
 import boto3
+from typing import List
 from ssl import SSLContext, PROTOCOL_TLSv1_2 , CERT_REQUIRED
 from cassandra_sigv4.auth import SigV4AuthProvider
 from cassandra import ConsistencyLevel
 from cassandra.cluster import Cluster, Session, ExecutionProfile, EXEC_PROFILE_DEFAULT
+from monoid_backend.config import settings
 
-def get_cluster():
+def get_aws_keyspaces_cluster():
     profile = ExecutionProfile(
         consistency_level=ConsistencyLevel.LOCAL_QUORUM
     )
@@ -22,8 +24,20 @@ def get_cluster():
         port=9142
     )
 
+def get_cassandra_cluster(hosts: List[str], port: str) -> Cluster:
+    return Cluster(
+        [hosts],
+        port=port
+    )
+
+
 async def get_cassandra_session() -> Session:
-    cluster = get_cluster()
+    # Production uses AWS Keyspaces
+    if settings.CASSANDRA_HOST != "" and settings.CASSANDRA_PORT != "":
+        cluster = get_cassandra_cluster(settings.CASSANDRA_HOST, settings.CASSANDRA_PORT)
+    else:
+        cluster = get_aws_keyspaces_cluster()
     session = cluster.connect()
+    
     yield session
 

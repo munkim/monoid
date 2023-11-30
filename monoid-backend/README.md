@@ -4,24 +4,29 @@
 
 ### Prerequisites
 - Postgres 15+
-- Cassandra (AWS Keyspaces)
+- Cassandra 
 - Python 3.8+
 - Poetry (Python library)
 
 ### Local Env Setup 
 #### Postgres Setup
-1. Install local version of Postgres. For simplicity and safety, we recommend using Docker. 
+1. Install Postgres. 
 
-    If using Docker: 
+    Using Docker (recommended):
 
     ```
     docker run --name monoid-postgres -p 5432:5432 -e POSTGRES_PASSWORD=pgpassword -d postgres
     ```
 
 #### Cassandra Setup
-1. Add cassandra related certificates (`global-bundle.pem` and `sf-class2-root.crt`) under `monoid_backend/core/secret/`. Those certificates can be acquired from AWS Keyspaces.
+1. Install Cassandra. 
 
-    Note: If using other services such as ScyllaDB, DataStax, or even a local instance, you may want to change `get_cluster()` function in [monoid_backend/core/aws_keyspaces.py](monoid_backend/core/aws_keyspaces.py).
+    Using Docker (recommended):
+    ```
+    docker run --name cass --network cass-network -d -e CASSANDRA_BROADCAST_ADDRESS=127.0.0.1 -p 9042:9042 cassandra:latest
+    ```
+    
+    Note: Production uses AWS Keyspaces, which requires certificates (`global-bundle.pem` and `sf-class2-root.crt`) under `monoid_backend/core/secret/`. If using other services such as ScyllaDB or DataStax, modify the functions in [monoid_backend/core/cassandra.py](monoid_backend/core/cassandra.py).
 
 
 #### Application Setup
@@ -37,12 +42,12 @@
     poetry install
     ```
 
-4. Migrate Postgres
+4. Migrate Postgres. (Ensure `.env` is updated.)
     ```
     alembic upgrade head
     ```
 
-5. Migrate Cassandra
+5. Migrate Cassandra. (Ensure `.env` is updated.)
     ```
     # Run from monoid/monoid_backend
     python scripts/cassandra/0_create_chat_session_models.py
