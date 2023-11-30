@@ -9,6 +9,7 @@ from ssl import SSLContext, PROTOCOL_TLSv1_2 , CERT_REQUIRED
 from cassandra_sigv4.auth import SigV4AuthProvider
 from cassandra import ConsistencyLevel
 
+
 from monoid_backend.config import settings
 from monoid_backend.core.cassandra import get_cassandra_cluster
 
