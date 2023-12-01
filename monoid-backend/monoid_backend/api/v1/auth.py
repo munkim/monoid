@@ -72,28 +72,6 @@ async def google_authorize(
     family_name = id_token_info.get('family_name')
     expiration = id_token_info.get('exp')
 
-    whitelisted_email_domains = set([
-        "monoid.so",
-        "ycombinator.com",
-        "metaplane.dev"
-    ])
-    email_domain = email.split("@")[1]
-    
-    # TODO: Clean this up and move the CRUD logic to a dedicated CRUD file
-    # Get whitelist from cassandra
-    query = """
-        SELECT * FROM monoid.whitelisted_emails WHERE email = %s
-    """
-    res = cassandra_session.execute_async(query, (email,))
-    whitelisted_emails = set([r.email for r in res.result()])
-
-    if email_domain not in whitelisted_email_domains and email not in whitelisted_emails:
-        capture_exception(Exception(f"Unauthorized email: {email}"))
-        return AuthorizeResponse(
-            success=False, 
-            error='Unable to authorize. Please contact the administrator of this app.'
-        )
-
     # find account by email
     account_by_email = await accountCRUD.get_by_email(email=email)
 
