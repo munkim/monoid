@@ -448,7 +448,6 @@ async def test_api(
                         time_taken=duration,
                         response_size=content_length
                     )
-
                 elif response.status == 404:
                     return APITestingResponse(
                         status_code=http_status.HTTP_404_NOT_FOUND, 
@@ -460,6 +459,13 @@ async def test_api(
                     return APITestingResponse(
                         status_code=http_status.HTTP_500_INTERNAL_SERVER_ERROR, 
                         response=f"500: The API ({url}) had an Internal Server Error: \n{response_body}",
+                        time_taken=duration,
+                        response_size=content_length
+                    )
+                else:
+                    return APITestingResponse(
+                        status_code=response.status, 
+                        response=response_body,
                         time_taken=duration,
                         response_size=content_length
                     )
