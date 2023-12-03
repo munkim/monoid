@@ -1,0 +1,30 @@
+name: "\U0001F4AC General"
+description: General issue template. To report a security related issue, please email us directly at privacy@monoid.so.
+labels: ["00 General"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thank you for taking the time to add any issues.
+
+  - type: textarea
+    id: system-info
+    attributes:
+      label: System Info
+      description: Please share your system info with us so we can better understand the context of your issue.
+      placeholder: |
+        - Frontend vs Backend [e.g. Frontend]
+        - Monoid Version / SHA7 [e.g. 1.0.0 / abc1234 ]
+        - Language Version [e.g. Python 3.8]
+        - Browser [e.g. Chrome]
+        - OS: [e.g. MacOS]
+    validations:
+      required: true
+  
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe your issue.
+    validations:
+      required: true
