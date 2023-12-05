@@ -333,10 +333,14 @@ async def run_action_stream(
         current_total_length += len(tokenizer.encode(message["content"]))
     
     if current_total_length > max_token_length:
-        raise HTTPException(
-            status_code=http_status.HTTP_400_BAD_REQUEST,
-            detail=f"Input to LLM is too long. Current Total Length (without API call) is {current_total_length} tokens. Max is {max_token_length}."
-        )
+        yield json.dumps({
+            "type": "language_response",
+            "content": f"Input to LLM is too long. Current Total Length is {current_total_length} tokens. Max is {max_token_length}.",
+            "agent_name": 'Simulated Agent',
+            "nesting_level": 0
+        }) + '\n'
+
+        return
 
     openai_response = await openai_function_call(
             all_messages, 
@@ -448,11 +452,15 @@ async def run_action_stream(
             api_response_length = len(tokenizer.encode(api_response))
             current_total_length += api_response_length
             if current_total_length > max_token_length:
-                raise HTTPException(
-                    status_code=http_status.HTTP_400_BAD_REQUEST,
-                    detail=f"Input to LLM is too long. Current Total Length is {current_total_length} tokens (API Response has {api_response_length}). Max is {max_token_length}."
-                )
-            
+                yield json.dumps({
+                    "type": "language_response",
+                    "content": f"Input to LLM is too long. Current Total Length is {current_total_length} tokens (API Response has {api_response_length}). Max is {max_token_length}.",
+                    "agent_name": 'Simulated Agent',
+                    "nesting_level": 0
+                }) + '\n'
+
+                return
+
             # Add api_response to the stream
             # right after the action_call stream
             yield json.dumps({

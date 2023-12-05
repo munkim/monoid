@@ -126,10 +126,14 @@ async def run_agent_stream(
         current_total_length -= popped_message_length
 
         if all_messages == []:
-            raise HTTPException(
-                status_code=http_status.HTTP_400_BAD_REQUEST,
-                detail=f"There is no message without surpassing the maximum token length, which is {max_token_length}."
-            )
+            yield json.dumps({
+                "type": "language_response",
+                "content": f"There is no message without surpassing the maximum token length, which is {max_token_length}.",
+                "agent_name": agent_name,
+                "nesting_level": nesting_level
+            }) + '\n'
+            return
+
 
     # Initial OpenAI Call
     # TODO: Add timeout/retry to this call in case OpenAI is not responding + respond with a message to the user
@@ -430,10 +434,13 @@ async def run_agent_stream(
                 current_total_length -= popped_message_length
 
                 if all_messages == []:
-                    raise HTTPException(
-                        status_code=http_status.HTTP_400_BAD_REQUEST,
-                        detail=f"There is no message without surpassing the maximum token length, which is {max_token_length}."
-                    )
+                    yield json.dumps({
+                        "type": "language_response",
+                        "content": f"There is no message without surpassing the maximum token length, which is {max_token_length}.",
+                        "agent_name": agent_name,
+                        "nesting_level": nesting_level
+                    }) + '\n'
+                    return
 
             # Hit OpenAI again for a summary OR another Function Call
             if settings.MONOID_ENVIRONMENT == "local":
