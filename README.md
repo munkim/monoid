@@ -4,8 +4,6 @@
 
 [![](https://dcbadge.vercel.app/api/server/KxdjPCeswT?compact=true&style=flat)](https://discord.gg/KxdjPCeswT)
 
-<a href="https://www.producthunt.com/posts/monoid-2?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-monoid&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=428336&theme=light" alt="Monoid - Open&#0045;source&#0032;platform&#0032;for&#0032;AI&#0032;agents | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
 # 🧐 What is Monoid?
 
 Monoid is a platform where you can build AI Agents directly on top of your APIs. Skip writing boilerplate code around LLMs and simply focus on optimizing your APIs and customizing your Agents. By giving Agents access to your APIs, they can:
