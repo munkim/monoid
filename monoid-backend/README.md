@@ -9,6 +9,7 @@
 - Poetry (Python library)
 
 ### Local Env Setup 
+
 #### Postgres Setup
 1. Install Postgres. 
 
@@ -28,6 +29,13 @@
     
     Note: Production uses AWS Keyspaces, which requires certificates (`global-bundle.pem` and `sf-class2-root.crt`) under `monoid_backend/core/secret/`. If using other services such as ScyllaDB or DataStax, modify the functions in [monoid_backend/core/cassandra.py](monoid_backend/core/cassandra.py).
 
+
+#### Docker Compose
+Alternatively, you can set up both postgres and Cassandra once using docker-compose, you can run
+
+``` 
+docker compose up
+ ```
 
 #### Application Setup
 1. Copy `.env.example` with a name `.env`.

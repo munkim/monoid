@@ -1,0 +1,33 @@
+version: '3.1'
+
+networks:
+  cass-network: 
+services:
+  monoid-postgres:
+    container_name: monoid-postgres
+    image: postgres:15
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "password"
+      PGDATA: "/data/postgres"
+    volumes:
+      - ./data/postgres:/data/postgres
+
+
+  cassandra:
+    container_name: cass
+    image: cassandra
+    ports:
+      - 9042:9042
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_BROADCAST_ADDRESS=127.0.0.1
+    networks:
+      - cass-network
+    volumes:
+      - ./data/cass:/var/lib/cassandra 
+
+  

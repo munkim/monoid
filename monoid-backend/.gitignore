@@ -198,3 +198,5 @@ terraform.rc
 *lambda_versions*
 
 #==========DEV ENV=============#
+
+data/*
